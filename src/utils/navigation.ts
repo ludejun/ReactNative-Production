@@ -4,7 +4,7 @@ export const navigationRef = createRef<any>(); // NavigationContainerRef，在Ap
 export const navigate = (name: string, params = {}) =>
   navigationRef.current?.navigate(name, params);
 
-// ！important -> 下面的name等string需要根据业务路由定义而定
+// ！important -> TODO 下面的name等string需要根据业务路由定义而定
 /**
  * reset：不希望用户可以返回之前的页面，一般用在一个流程的结果页
  * 默认reset到Login登录页，可以reset到其他页，但是如果结果页有返回按钮，将无法返回；这个时候需要用下面的resetHome等函数

@@ -1,7 +1,7 @@
 import store from '../store';
 import { getItem } from './asyncStorage';
 
-// !important ->  需要根据实际业务调整类型
+// !important -> TODO 需要根据实际业务调整类型
 export interface UserInfo {
   custNo: string;
   token: string;

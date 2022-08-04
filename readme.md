@@ -2,9 +2,10 @@
 面向生产、上架App，集成相机、开屏、隐私协议、扫一扫、FaceId、手势、组件库、基础函数、RNConsole、下拉刷新、自动化CLI打包、微信分享、兼容性高JSBridge、rematch的框架
 
 ### 使用前须知
-App打开时，依此经过的屏幕：启动屏（SplashScreen，这是原生实现） -> 前置跑马灯页（只在安装后显示的功能展示前置页，FrontInfoCarousel）-> HomeTab -> Home
+**App打开时，依此经过的屏幕**：启动屏（SplashScreen，这是原生实现） -> 前置跑马灯页（只在安装后显示的功能展示前置页，FrontInfoCarousel）-> HomeTab -> Home
 
-默认全局缓存解释，可以根据业务改名：
+**默认全局缓存解释，可以根据业务改名：**
+
 - isPopSecret 隐私协议是否有弹，跟用户无关，只看一次
 - frontInfo 跑马灯前置页（广告功能页）是否有显示过，跟用户无关，只看一次
 - userGesturePasswordObj 用户设置的手势密码，只保留一个用户的，也可以说是跟用户无关
@@ -13,13 +14,23 @@ App打开时，依此经过的屏幕：启动屏（SplashScreen，这是原生�
 
 logout 的dispatch需要测试，logout的hook需要测试几个dispatch有没有问题
 
-升级 react-navigation@6.x：
-yarn add @react-navigation/native @react-navigation/bottom-tabs @react-navigation/stack react-native-screens react-native-safe-area-context
-
 android studio的 Android SDK Platforms需要包含API Level为31的。因为build.gradle中的compileSdkVersion为31，最小的version：minSdkVersion升级到了24
+
 android studio需要JDK11：https://github.com/facebook/react-native/issues/33731
 
+
+
+### 使用前修改
+
+1. 代码注释中标明 TODO的地方需要根据业务情况而定
+2. 包名需要更新，更新方法见下方大项
+3. 隐私协议、iOS/Android配置中关于隐私的使用描述文件
+4. App Icon / 启动屏 / 前置页 图片
+
+
+
 ### 如何更新包名
+
 在应用新项目时，需要更新包名和bundleId，人工改会有很多遗漏和问题。
 
 ```shell
@@ -80,3 +91,5 @@ Deep：
 > In some cases the Xcode cache needs to be cleared (Xcode -> Product -> Clean Build Folder) 
 > It is very important
 
+升级 react-navigation@6.x：
+yarn add @react-navigation/native @react-navigation/bottom-tabs @react-navigation/stack react-native-screens react-native-safe-area-context

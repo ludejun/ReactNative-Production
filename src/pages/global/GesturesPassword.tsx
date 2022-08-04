@@ -25,7 +25,7 @@ const GesturesPassword = (props: IGesture) => {
     if (!data) return noSetGesturePas();
     if (!custNo || (custNo && !data[custNo])) return noSetGesturePas();
     if (custNo && data[custNo] && data[custNo] === password) {
-      // !important -> 这里需要加入如更新token等业务需要
+      // !important -> TODO 这里需要加入如更新token等业务需要
       // await fetchNewTokenLogin();
 
       if (eventBus.getAllEvents('JPush-Navigate').length > 0)

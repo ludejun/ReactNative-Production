@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native-ui-lib';
 import { Button, StatusBarView, ViewLoader } from '../../components';
 
-// 需要注意下面几点：
+// TODO 需要注意下面几点：
 // 1. 在登录成功时，在eventBus中有登录完成后需要执行的回调：if (eventBus.getAllEvents('LoginCallback').length > 0) eventBus.emit('LoginCallback')
 //    一般是webview在调用login之后需要执行回到webview的回调
 // 2. 路由参数中的resetName，指的是登录完需要reset的页面，在utils中的reset函数中，默认resetName === 'HomeTab'，这个与第一个功能有重合，第一个优先级高一点，适合执行更复杂的回调函数，resetName只是一个路由字符串

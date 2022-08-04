@@ -1,0 +1,9 @@
+node_modules
+ios
+android
+__tests__
+App.tsx
+.env
+env.js
+.eslintrc.js
+RNConsole

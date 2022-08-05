@@ -60,17 +60,17 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>为保证您能顺利完成扫一扫、身份证拍照上传等功能，请允许正心谷资本使用相机和麦克风权限</string>
+	<string>为保证您能顺利完成扫一扫、身份证拍照上传等功能，请允许RN-Production使用相机和麦克风权限</string>
 	<key>NSFaceIDUsageDescription</key>
-	<string>为方便您使用快捷登录功能，请允许正心谷资本APP使用FaceID权限</string>
+	<string>为方便您使用快捷登录功能，请允许RN-ProductionAPP使用FaceID权限</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>为方便给您推送投资咨讯等信息，请允许正心谷资本APP使用定位权限</string>
+	<string>为方便给您推送投资咨讯等信息，请允许RN-ProductionAPP使用定位权限</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>为保证您能顺利完成扫一扫、身份证拍照上传等功能，请允许正心谷资本使用相机和麦克风权限</string>
+	<string>为保证您能顺利完成扫一扫、身份证拍照上传等功能，请允许RN-Production使用相机和麦克风权限</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>为保证您能顺利完成实名认证、合格投资者认证中身份证照片上传等功能，请允许正心谷资本使用存储权限</string>
+	<string>为保证您能顺利完成实名认证、合格投资者认证中身份证照片上传等功能，请允许RN-Production使用存储权限</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>为保证您能顺利完成扫一扫、实名认证、合格投资者认证中身份证照片上传等功能，请允许正心谷资本使用存储权限</string>
+	<string>为保证您能顺利完成扫一扫、实名认证、合格投资者认证中身份证照片上传等功能，请允许RN-Production使用存储权限</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

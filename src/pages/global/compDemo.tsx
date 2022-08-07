@@ -78,7 +78,7 @@ export const CompDemo = () =>{
         <DemoItem description="ButtonColumnTwo 两列按钮">
           <ButtonColumnTwo leftTitle="左边" rightTitle="右边重点" />
         </DemoItem>
-        <DemoItem description="BottomButton 底部按钮，无radius">
+        <DemoItem description="BottomButton 底部按钮，无radius，默认不可点击">
           <BottomButton />
         </DemoItem>
         <DemoItem description="LinearGradient 颜色渐变">

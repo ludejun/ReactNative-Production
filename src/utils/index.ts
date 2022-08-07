@@ -1,6 +1,6 @@
 import { formatDate, formatProductDate, formatTime, inSevenDays } from './moment';
 
-import { deviceWidth, deviceHeight, safeHeight, deviceType } from './safeHeight';
+import { deviceWidth, deviceHeight, safeHeight, isIOS } from './safeHeight';
 import {
   checkPasswordNotAbc,
   checkPasswordNotSimpleNumber,
@@ -70,7 +70,7 @@ export {
   appActiveCB,
   reset,
   permissionCamera,
-  deviceType,
+  isIOS,
   eventBus,
   monitor,
   request,

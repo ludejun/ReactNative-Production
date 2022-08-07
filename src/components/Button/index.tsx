@@ -210,13 +210,13 @@ export const BottomButton: React.FC<ButtonProps> = (props: ButtonProps) => {
   } = props;
 
   return (
-    <Touchable mcid={mcid} mcCustom={mcCustom} onPress={onPress}>
+    <Touchable mcid={mcid} mcCustom={mcCustom} onPress={disable ? onPress : () => {}}>
       <View
         center
         width={'100%'}
         height={height}
         bg-primaryColor={!disable}
-        bg-SunDisColor={disable}>
+        bg-primaryDisabe={disable}>
         <Text firstTitle={fontSize === 18} pfr white style={{ fontSize }}>
           {title}
         </Text>

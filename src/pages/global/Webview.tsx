@@ -16,12 +16,12 @@ import {
   resetHome,
   logout,
   checkUrl,
+  isIOS,
 } from '../../utils';
 import { Header } from '../../components/Header';
 import { ConfirmModal } from '../../components/Modal';
 import Configs from '../../configs';
 import { StatusBarView, ViewLoader } from '../../components';
-import { deviceType, isIOS } from '../../utils/safeHeight';
 import { StackNavigationProp } from '@react-navigation/stack/lib/typescript/src/types';
 
 type IWebviewProps = ReturnType<typeof mapDispatchToProps> & ReturnType<typeof mapStateToProps> & {
@@ -58,17 +58,19 @@ const RWebview: React.FC<IWebviewProps> = (props: IWebviewProps) => {
 
   // 用户信息
   let userInfoCookie = '';
+  let documentCookie = '';
   let userInfo = getUserInfo();
   const { token, custNo } = userInfo || {};
   if (userInfo && Object.keys(userInfo).length > 0) {
-    Object.entries(userInfo).forEach(
-      ([key, value]) => (userInfoCookie += `${key}:${value};`),
-    );
+    Object.entries(userInfo).forEach(([key, value]) => {
+      userInfoCookie += `${key}=${value};`;
+      documentCookie += `document.cookie='${key}=${value}';`; // 解决RN注入的JS写cookie貌似只能一个一个的写，不然只认识第一个
+    });
   }
 
   const newSource = {
     uri: currentURI,
-    headers: { ...header },
+    headers: { ...header, Cookie: userInfoCookie },
   };
 
   const JSBridge = `
@@ -132,6 +134,7 @@ const RWebview: React.FC<IWebviewProps> = (props: IWebviewProps) => {
     window.__token__ = '${token}';
     window.__maccode__= '${Configs.maccode}';
     window.__version__ = '${Configs.version}';
+    ${documentCookie}
     ${JSBridge}
 
     true; // note: this is required, or you'll sometimes get silent failures
@@ -163,6 +166,7 @@ const RWebview: React.FC<IWebviewProps> = (props: IWebviewProps) => {
       window.__userInfo__ = '${userInfoCookie}';
       window.__token__ = '${token}';
       window.__maccode__= '${Configs.maccode}';
+      ${documentCookie}
       ${JSBridge}
     }
     window.__loading__ = false;
@@ -336,7 +340,7 @@ const RWebview: React.FC<IWebviewProps> = (props: IWebviewProps) => {
           onMessage={onJSBridgeHandler}
           onLoad={() => {
             setWebViewLoading(false);
-            if (!deviceType)
+            if (!isIOS)
               setTimeout(() => {
                 webview.current && webview.current.requestFocus();
               }, 100);

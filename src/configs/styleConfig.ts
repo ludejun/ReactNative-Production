@@ -6,7 +6,7 @@ export const fontLineHeight = (fontSize = 12, lineHeight = 1.5) => fontSize * li
 
 Colors.loadColors({
   primaryColor: '#CCAC77',
-  SunDisColor: '#CCAC77',
+  primaryDisabe: '#E5D5BB',
   subColor: '#E5D5BB',
   hrefColor: '#4A90E2',
   red: '#D0021B',

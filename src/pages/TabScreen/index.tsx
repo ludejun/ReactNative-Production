@@ -28,7 +28,8 @@ const iconsMapping = {
   },
 };
 
-const TabScreen = ({ homeTodoCount }: { homeTodoCount: number }) => (
+// homeTodoCount 由下方注释掉的 connect() 注入；目前没有人传，因此是可选的。
+const TabScreen = ({ homeTodoCount }: { homeTodoCount?: number }) => (
   <BottomTab.Navigator
     initialRouteName={'HomeScreen'}
     screenOptions={{

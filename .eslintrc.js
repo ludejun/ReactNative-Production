@@ -24,7 +24,10 @@ module.exports = {
   rules: {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+    ],
     '@typescript-eslint/no-array-constructor': 'error',
     '@typescript-eslint/no-duplicate-imports': 'error',
     '@typescript-eslint/no-shadow': 'error',

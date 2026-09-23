@@ -7,7 +7,7 @@ import {
   checkPasswordValue,
   checkPasswordStrength as checkPasswordStrengthUtils,
   checkBankCard,
-  deviceType,
+  isIOS,
 } from '../../utils';
 import { ErrorText } from '../Utils';
 
@@ -197,7 +197,7 @@ export const TextField: React.FC<TextFieldProps> = (props: TextFieldProps) => {
     onChangeText(strength, e);
   };
   const onPasswordRightBtn = () => setPasVisable(!pasVisable);
-  const onMoneyField = (e: string) => {
+  const onMoneyField = (_e: string) => {
     // const reg = /^[1-9]\d*$/;
     // if (reg.test(e) && Number(e) >= 500) {
     //   onChangeText(false, e);
@@ -436,7 +436,7 @@ export const TextField: React.FC<TextFieldProps> = (props: TextFieldProps) => {
 
 const getFontSize = () => {
   const { height } = Dimensions.get('window');
-  if (!deviceType) return 14;
+  if (!isIOS) return 14;
   // pro max, 11 pro max, xr, 11
   if (height === 896) return 14;
   // 12 pro max

@@ -77,10 +77,13 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     fullWidth = false,
     loading = false,
   } = props;
+  // 防重提交：onPress 执行期间忽略后续点击。此前 setLoading(true) 被调用，
+  // 但 iLoading 和 loading 都没有被任何地方读取，所以该保护从未生效。
   const onPressBtn = () => {
+    if (iLoading || loading) return;
     setLoading(true);
-    onPress();
-  }
+    Promise.resolve(onPress()).finally(() => setLoading(false));
+  };
   if (disable)
     return (
       <View

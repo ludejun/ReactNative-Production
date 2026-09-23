@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Colors, View } from 'react-native-ui-lib';
 import { WebView } from 'react-native-webview';
 import { connect } from 'react-redux';
-import { ParamListBase, useFocusEffect, useNavigation } from '@react-navigation/native';
+import { ParamListBase, RouteProp, useFocusEffect, useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Clipboard from '@react-native-clipboard/clipboard';
 import { WeChat } from '../../configs/wechat';
@@ -24,12 +24,10 @@ import Configs from '../../configs';
 import { StatusBarView, ViewLoader } from '../../components';
 import { StackNavigationProp } from '@react-navigation/stack/lib/typescript/src/types';
 
-type IWebviewProps = ReturnType<typeof mapDispatchToProps> & ReturnType<typeof mapStateToProps> & {
-  route: {
-    params: IWebviewRoute
-    goBackPage: false | string | undefined
-    isReload: boolean
-  } // 页面路由参数
+type IWebviewProps = ReturnType<typeof mapDispatchToProps> &
+ReturnType<typeof mapStateToProps> & {
+  // React Navigation 传进来的 route；只有 params 会被读取
+  route?: RouteProp<ParamListBase> & { params: IWebviewRoute };
 };
 
 interface IWebviewRoute {
@@ -48,7 +46,9 @@ interface IWebviewRoute {
 const RWebview: React.FC<IWebviewProps> = (props: IWebviewProps) => {
   const { route, showToastGlobal, ...restProps } = props;
   const [webViewLoading, setWebViewLoading] = useState(true);
-  const { url, header = {}, disableBottom = false } = (route && route.params) || restProps || {};
+  // The old `|| restProps` fallback could never supply these: restProps only
+  // carries the connected props, none of which are url / header / disableBottom.
+  const { url, header = {}, disableBottom = false } = route?.params ?? ({} as IWebviewRoute);
   const webview = useRef<WebView>(null);
 
   const [isModalShow, setModalShow] = useState(false);

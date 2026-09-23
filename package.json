@@ -74,15 +74,15 @@
     "@babel/eslint-parser": "^7.18.9",
     "@babel/runtime": "^7.18.9",
     "@react-native-community/eslint-config": "^1.1.0",
-    "@types/jest": "^27.4.0",
+    "@types/jest": "^29.5.14",
     "@types/md5": "^2.3.2",
     "@types/react": "^18.0.15",
     "@types/react-native": "^0.69.3",
-    "@types/react-test-renderer": "^17.0.1",
+    "@types/react-test-renderer": "^18.3.1",
     "@types/redux-logger": "3.0.8",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@typescript-eslint/parser": "4.14.1",
-    "babel-jest": "^28.1.3",
+    "babel-jest": "^29.7.0",
     "babel-plugin-inline-dotenv": "^1.6.0",
     "eslint": "^8.6.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -92,12 +92,12 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-redux": "^3.3.4",
     "husky": "^8.0.1",
-    "jest": "^25.1.0",
+    "jest": "^29.7.0",
     "lint-staged": "^10.5.4",
-    "metro-react-native-babel-preset": "^0.59.0",
+    "metro-react-native-babel-preset": "^0.67.0",
     "pre-commit": "1.2.2",
-    "react-test-renderer": "^16.13.1",
-    "typescript": "^4.5.4"
+    "react-test-renderer": "^18.3.1",
+    "typescript": "^5.9.3"
   },
   "jest": {
     "preset": "react-native",
@@ -108,6 +108,14 @@
       "jsx",
       "json",
       "node"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!.*(@react-native|react-native|@react-navigation))"
+    ],
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*-test.(ts|tsx|js)"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.19.0"
 }

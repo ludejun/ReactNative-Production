@@ -6,7 +6,7 @@ import { Header, ViewLoader } from '../../components';
 
 // QRCodeScanner的参数请参考 https://github.com/moaazsidat/react-native-qrcode-scanner
 export const QrcodeScan = () => {
-  const onSuccess = (e) => {
+  const onSuccess = (e: { data: string }) => {
     console.log('qrcodeScan: ', e.data);
   };
 

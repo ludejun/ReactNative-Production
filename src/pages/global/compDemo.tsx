@@ -33,7 +33,7 @@ export const CompDemo = () =>{
         quality: isIOS ? 0.5 : 0.3,
         includeBase64: true,
       },
-      (image) => {console.log(image)}
+      (image) => {console.log(image);},
     );
   };
 

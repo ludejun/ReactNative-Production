@@ -74,8 +74,8 @@ Run `pnpm format` before committing so Prettier settles the formatting; CI does 
 
 - **Commit messages** follow [Conventional Commits](https://www.conventionalcommits.org/):
   `fix:`, `feat:`, `docs:`, `chore:`, `refactor:`, `test:`.
-- **Both READMEs.** If a change affects how the framework is used, update `readme.md` _and_
-  `README_EN.md`.
+- **Both READMEs.** If a change affects how the framework is used, update `README.md` _and_
+  `README_CN.md`.
 - **Keep the type check clean.** Several real bugs in this repo were hidden by
   `suppressImplicitAnyIndexErrors` and an ancient TypeScript; `pnpm tslint` must stay at 0 errors.
 - **Test pure logic, not the whole app.** Rendering `<App />` needs the full native module surface
@@ -162,7 +162,7 @@ pnpm test        # jest
 ## 一些约定
 
 - **提交信息**遵循 [Conventional Commits](https://www.conventionalcommits.org/)：`fix:`、`feat:`、`docs:`、`chore:`、`refactor:`、`test:`。
-- **两份 README。** 如果改动影响了框架用法，请同时更新 `readme.md` 和 `README_EN.md`。
+- **两份 README。** 如果改动影响了框架用法，请同时更新 `README.md` 和 `README_CN.md`。
 - **保持类型检查干净。** 这个仓库里好几个真 bug 都是被 `suppressImplicitAnyIndexErrors` 和过旧的 TypeScript 盖住的，`pnpm tslint` 必须保持 0 error。
 - **测纯逻辑，不要测整个 App。** 渲染 `<App />` 需要 mock 全部原生模块，在 CI 里跑不完。测试放在 `__tests__/*-test.ts`。
 

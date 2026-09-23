@@ -17,20 +17,10 @@
 <p align="center">
   <a href="./CHANGELOG.md">Changelog</a>
   ·
-  <a href="./readme.md">中文文档</a>
+  <a href="./README_CN.md">中文文档</a>
 </p>
 
 ---
-
-> [!NOTE]
-> **React Native is still on 0.68.**
->
-> Moving to the current release (0.87) crosses the New Architecture (Fabric / TurboModules) and
-> means regenerating the `ios/` and `android/` projects — work that needs Xcode and the Android SDK
-> to verify, not something that can be done from the JavaScript side alone.
->
-> **The JavaScript side has been brought up to date**: TypeScript 5.9 with zero type errors, ESLint
-> with zero errors, and a unit test suite that runs. See [CHANGELOG.md](./CHANGELOG.md).
 
 ## Commands
 

@@ -16,17 +16,10 @@
 <p align="center">
   <a href="./CHANGELOG.md">更新日志</a>
   ·
-  <a href="./README_EN.md">English</a>
+  <a href="./README.md">English</a>
 </p>
 
 ---
-
-> [!NOTE]
-> **React Native 仍停留在 0.68。**
->
-> 升级到当前版本（0.87）要跨越新架构（Fabric / TurboModules），并重新生成 `ios/` 和 `android/` 原生工程 —— 这需要 Xcode 和 Android SDK 才能验证，不是纯 JS 侧能完成的工作。
->
-> **JS 侧已经完成维护**：TypeScript 升到 5.9 并做到 0 类型错误、ESLint 0 error、单元测试可运行。详见 [CHANGELOG.md](./CHANGELOG.md)。
 
 ## 命令
 

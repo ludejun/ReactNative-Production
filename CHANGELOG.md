@@ -2,8 +2,7 @@
 
 ## Unreleased
 
-This pass covers the JavaScript side only. See the note in the README about why
-React Native itself stays on 0.68.
+This pass covers the JavaScript side only.
 
 ### Fixed
 
@@ -50,8 +49,7 @@ React Native itself stays on 0.68.
 
 ### Added
 
-- English `README_EN.md` alongside the Chinese `readme.md`, both with badges and
-  a plain statement of the React Native version situation.
+- A Chinese `README_CN.md` alongside the English `README.md`, both with badges.
 - `CONTRIBUTING.md` and this changelog.
 - `ci.yml`: lint, type-check and test on Node 20 and 22. It deliberately does
   not build the apps — that needs Xcode and the Android SDK.
